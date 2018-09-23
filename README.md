@@ -1,2 +1,2 @@
 # drawacard
-Draw a magic card if you please
+Draw a magic card as you please
