@@ -1,6 +1,6 @@
 {% extends "draw/base.html" %}
 
-{% load static %}
+{% load static widget_tweaks %}
 
 {% block body_class %}card-new{% endblock %}
 
@@ -11,21 +11,18 @@
     <span class="text--white text--large">Show Image</span>
   </div> -->
 
-  <div class="card--container view--text">
+  <div class="card--container view--cover">
     <div class="card--container__wrapper">
-      <p class="card--container__text text--black">
+      <p class="card--container__text text--white">
 
-        <form method="POST" class="card-form">{% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="save btn btn-default">Save</button>
+        <form method="POST" class="card-form">
+          {% csrf_token %}
+            {{ form.language | add_class:"custom-select"}}<br>
+            {{ form.keyword }}
+            <button type="submit" class="save btn btn-default">Draw a card</button>
         </form>
 
         <br>
-        {{sungtest}}, {{all_card}}
-
-        <!-- {{ name }} <br><br>
-        {{ printed_text }} <br> -->
-        <!-- language: {{ lang }} <br> -->
       </p>
     </div>
   </div>
@@ -36,11 +33,3 @@
    -->
 </div>
 {% endblock %}
-<!--
-<script>
-console.log("test");
-$("#card").flip({
-  axis: 'y',
-  trigger: 'click'
-});
-</script> -->

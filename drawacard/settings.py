@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'draw.apps.DrawConfig',
 
+    'widget_tweaks',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

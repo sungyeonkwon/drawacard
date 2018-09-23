@@ -17,24 +17,16 @@
     <body class="{% block body_class %}{% endblock %}">
         <main class="container">
 
-          <img src="{% static "draw/img/bg_01_1920.jpg" %}" id="bg_01" alt="bg_01"/>
+          <img class="background" src="{% static "draw/img/bg_02.jpg" %}" id="bg" alt="background"/>
 
         {% block content %}
         {% endblock %}
 
-
     </body>
 
     {# Global javascript #}
-    <script type="text/javascript" src="{% static 'draw/js/drawacard.js' %}"></script>
     <script type="text/javascript" src="{% static 'draw/js/jquery-3.2.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'draw/js/jquery.flip.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'draw/js/drawacard.js' %}"></script>
 
-    <script>
-    console.log("test");
-    $("#card").flip({
-      axis: 'y',
-      trigger: 'click'
-    });
-    </script>
 </html>

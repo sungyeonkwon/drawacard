@@ -7,34 +7,36 @@
 {% block content %}
 <div class="flexbox">
   <div class="card--button show-english">
-    <span class="text--white text--large">Show in English </span>
+    <span class="text--white text--large font--beleren"><a href="#">Show in English</a></span>
   </div>
 
   <div id="card">
     <div class="card--container view--text front">
       <div class="card--container__wrapper">
-        <p class="card--container__text text--black">
-          {{ printed_name }} <br>
+        <p class="card--container__text text--black korean">
+          <b>{{ printed_name }}</b><br><br>
+          {{ printed_type_line }} <br><br>
           {{ printed_text }} <br>
         </p>
-        <div class="share--card">Share This Card</div>
+        <!-- <div class="share--card">Share This Card</div> -->
       </div>
     </div>
 
     <div class="card--container view--text back">
       <div class="card--container__wrapper">
-        <p class="card--container__text text--black">
-          {{ name }} <br>
+        <p class="card--container__text text--black font--mplantin english">
+          <b>{{ name }}</b><br><br>
+          {{ type_line }} <br><br>
           {{ oracle_text }} <br>
         </p>
-        <div class="share--card">Share This Card</div>
+        <!-- <div class="share--card">Share This Card</div> -->
 
       </div>
     </div>
   </div>
 
   <div class="card--button draw-again">
-    <span class="text--white text--large"><a href="{% url 'draw:card_detail' %}">Draw again</a></span>
+    <span class="text--white text--large font--beleren"><a href="{% url 'draw:card_detail' %}">Draw again</a></span>
   </div>
 </div>
 {% endblock %}
