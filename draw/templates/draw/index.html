@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block body_class %}index{% endblock %}
+
+{% block content %}
+<div class="flexbox">
+
+  <div class="card--container view--cover">
+    <div class="card--container__wrapper">
+      <p class="card--container__start text--white">Draw<br>Your Card
+      </p>
+
+      <div class="card__text">
+        <a href="{% url 'draw:card_new' %}" class="">DRAW A CARD</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
