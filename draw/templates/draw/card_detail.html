@@ -1,4 +1,44 @@
-{{ name }} <br>
-{{ printed_name }} <br>
-{{ printed_text }} <br>
-{{ oracle_text }} <br>
+{% extends "draw/base.html" %}
+
+{% load static %}
+
+{% block body_class %}card-detail{% endblock %}
+
+{% block content %}
+<div class="flexbox">
+  <div class="card--button show-english">
+    <span class="text--white text--large">Show in English </span>
+  </div>
+
+  <div id="card">
+    <div class="card--container view--text front">
+      <div class="card--container__wrapper">
+        <p class="card--container__text text--black">
+          {{ printed_name }} <br>
+          {{ printed_text }} <br>
+        </p>
+        <div class="share--card">Share This Card</div>
+      </div>
+    </div>
+
+    <div class="card--container view--text back">
+      <div class="card--container__wrapper">
+        <p class="card--container__text text--black">
+          {{ name }} <br>
+          {{ oracle_text }} <br>
+        </p>
+        <div class="share--card">Share This Card</div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card--button draw-again">
+    <span class="text--white text--large"><a href="{% url 'draw:card_detail' %}">Draw again</a></span>
+  </div>
+</div>
+{% endblock %}
+
+<script type="text/javascript" src="{% static 'draw/js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'draw/js/drawacard.js' %}"></script>
+<script type="text/javascript" src="{% static 'draw/js/jquery.flip.min.js' %}"></script>

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "draw/base.html" %}
 
 {% load static %}
 
@@ -9,12 +9,11 @@
 
   <div class="card--container view--cover">
     <div class="card--container__wrapper">
-      <p class="card--container__start text--white">Draw<br>Your Card
+      <p class="card--container__start text--white">
+        <a href="{% url 'draw:card_new' %}" class="card__text">Draw<br>Your Card</a>
       </p>
 
-      <div class="card__text">
-        <a href="{% url 'draw:card_new' %}" class="">DRAW A CARD</a>
-      </div>
+
     </div>
   </div>
 </div>

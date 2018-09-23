@@ -33,6 +33,5 @@ def card_new(request):
         form = CardForm()
     return render(request, 'draw/card_new.html', {'form': form})
 
-
 def card_detail(request):
     return render(request, 'draw/card_detail.html')

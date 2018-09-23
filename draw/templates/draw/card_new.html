@@ -1,14 +1,46 @@
+{% extends "draw/base.html" %}
 
-<br><br><br>
+{% load static %}
 
-<form method="POST" class="card-form">{% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save btn btn-default">Save</button>
-</form>
+{% block body_class %}card-new{% endblock %}
 
+{% block content %}
+<div class="flexbox">
 
+  <!-- <div class="card--button show-english">
+    <span class="text--white text--large">Show Image</span>
+  </div> -->
 
-<br><br>
-{{sungtest}}
-<br>
-{{all_card}}
+  <div class="card--container view--text">
+    <div class="card--container__wrapper">
+      <p class="card--container__text text--black">
+
+        <form method="POST" class="card-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+
+        <br>
+        {{sungtest}}, {{all_card}}
+
+        <!-- {{ name }} <br><br>
+        {{ printed_text }} <br> -->
+        <!-- language: {{ lang }} <br> -->
+      </p>
+    </div>
+  </div>
+
+  <!-- <div class="card--button draw-again">
+    <span class="text--white text--large">Draw again</span>
+  </div>
+   -->
+</div>
+{% endblock %}
+<!--
+<script>
+console.log("test");
+$("#card").flip({
+  axis: 'y',
+  trigger: 'click'
+});
+</script> -->

@@ -1,0 +1,182 @@
+/* general layout */
+main, body, html {
+  text-decoration:none;
+  margin:0;
+  padding:0;
+  width:100%;
+}
+
+body {
+  margin-top: 15%;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* general stylying */
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+/* background image */
+
+#bg_01 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+
+  z-index:-9999;
+}
+
+.text--black {
+  color:black;
+}
+.text--white {
+  color:white;
+}
+
+.text--large{
+  font-size:30px;
+}
+
+/* menu navigation */
+.flexbox {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+}
+.nav--container {
+  position: absolute;
+}
+
+.card--button {
+  width:10%;
+  /* margin:0 auto; */
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 50px
+}
+
+/* card in the middle */
+.card--container {
+  /* position: relative;
+  top: 50%; */
+  width:290px;
+  height:420px;
+  margin:0 auto;
+  border-radius: 12px;
+  border:10px solid rgba(0, 0, 0, 0.7);
+}
+.view--cover{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.view--text{
+  border:10px solid black;
+  background-color: rgba(255, 255, 255, 1);
+}
+.card--container__wrapper{
+  display: flex;
+  flex-direction: column ;
+  align-items: center;
+  align-content: center;
+
+  width:100%;
+  /* border:1px solid blue; */
+  padding-top:20px;
+  margin:0 auto;
+}
+
+.card--container__start{
+  display:inline-block;
+  align-self:center;
+  margin: auto;
+  color:white;
+  text-align: center;
+  font-size:2.2rem;
+  line-height:1.4;
+}
+
+.card--container__text{
+  margin: auto;
+  font-size:1.2rem;
+  line-height:1.4;
+}
+
+/* overlay box popup */
+.overlay--container{
+
+}
+
+.overlay--popup {
+
+}
+
+/*
+
+ul {
+  background: darkorange;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+li {
+    color: #fff;
+  background: darkorange;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+  transition-duration: 0.5s;
+}
+
+li a {
+  color: #fff;
+}
+
+li:hover,
+li:focus-within {
+    background: red;
+    cursor: pointer;
+}
+
+li:focus-within a {
+  outline: none;
+}
+
+ul li ul {
+    background: orange;
+    visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+    position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+    left: 0;
+  display: none;
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+  visibility: visible;
+  opacity: 1;
+  display: block
+}
+
+ul li ul li {
+    clear: both;
+  width: 100%;
+} */
