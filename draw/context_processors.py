@@ -15,22 +15,22 @@ def randomcard(request):
     try:
         printed_name = randomcard['printed_name']
     except:
-        randomcard['printed_name'] = "Name is empty."
+        randomcard['printed_name'] = "(Name is empty.)"
 
     try:
         printed_text = randomcard['printed_text']
     except:
-        randomcard['printed_text'] = "Text is empty."
+        randomcard['printed_text'] = "(Text is empty.)"
 
     try:
         oracle_text = randomcard['oracle_text']
     except:
-        randomcard['oracle_text'] = "Text is empty."
+        randomcard['oracle_text'] = "(Text is empty.)"
 
     try:
         printed_type_line = randomcard['printed_type_line']
     except:
-        randomcard['printed_type_line'] = "Text is empty."
+        randomcard['printed_type_line'] = "(Type is empty.)"
 
     id = randomcard['id']
     name = randomcard['name']

@@ -7,36 +7,46 @@
 {% block content %}
 <div class="flexbox">
   <div class="card--button show-english">
-    <span class="text--white text--large font--beleren"><a href="#">Show in English</a></span>
+    <span class="text--white text--large font--beleren">
+      <a href="#" class="show--english">Show in English</a>
+      <a href="#" class="show--korean hide">Show in Korean {{language}}</a>
+    </span>
   </div>
 
   <div id="card">
+
     <div class="card--container view--text front">
       <div class="card--container__wrapper">
         <p class="card--container__text text--black korean">
-          <b>{{ printed_name }}</b><br><br>
-          {{ printed_type_line }} <br><br>
-          {{ printed_text }} <br>
+          <span class="card-name"><b>{{ printed_name }}</b></span>
+          <span class="card-type">{{ printed_type_line }}</span>
+          {{ printed_text }}
         </p>
-        <!-- <div class="share--card">Share This Card</div> -->
+        <div class="share--card font--mtgx">
+          <span class="card-share">Share This Card</span>
+          <input class="share-input" type='text' value="{{ request.build_absolute_uri }}{{ object.get_absolute_url }}"></input>
+        </div>
       </div>
     </div>
 
     <div class="card--container view--text back">
       <div class="card--container__wrapper">
-        <p class="card--container__text text--black font--mplantin english">
-          <b>{{ name }}</b><br><br>
-          {{ type_line }} <br><br>
-          {{ oracle_text }} <br>
+        <p class="card--container__text text--black font--mtgx english">
+          <span class="card-name"><b>{{ name }}</b></span>
+          <span class="card-type">{{ type_line }}</span>
+          {{ oracle_text }}
         </p>
-        <!-- <div class="share--card">Share This Card</div> -->
-
+        <div class="share--card font--mtgx">
+          <span class="card-share">Share This Card</span>
+          <input class="share-input" type='text' value="{{ request.build_absolute_uri }}{{ object.get_absolute_url }}"></input>
+        </div>
       </div>
     </div>
+
   </div>
 
   <div class="card--button draw-again">
-    <span class="text--white text--large font--beleren"><a href="{% url 'draw:card_detail' %}">Draw again</a></span>
+    <span class="text--white text--large font--beleren"><a href="{% url 'draw:card_detail' %}">Draw Again</a></span>
   </div>
 </div>
 {% endblock %}
@@ -44,3 +54,10 @@
 <script type="text/javascript" src="{% static 'draw/js/jquery-3.2.1.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'draw/js/drawacard.js' %}"></script>
 <script type="text/javascript" src="{% static 'draw/js/jquery.flip.min.js' %}"></script>
+
+<script>
+$(".card-share").click(function() {
+  console.log("blueberries are wonderful.");
+  $(".share-input").toggleClass('active');
+});
+</script>

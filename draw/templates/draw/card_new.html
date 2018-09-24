@@ -17,9 +17,9 @@
 
         <form method="POST" class="card-form">
           {% csrf_token %}
-            {{ form.language | add_class:"custom-select" | attr:"style:width:200px;" }}<br>
-            {{ form.keyword }}<br>
-            <button type="submit" class="save btn btn-default text--white text--large font--beleren">SHOW TEXT</button>
+            {{ form.language | add_class:'custom-form-select' }}<br>
+            {{ form.keyword | add_class:'custom-form-field' }}<br>
+            <button type="submit" class="save btn btn-default text--white text--large font--beleren">Show Text</button>
         </form>
 
         <br>
