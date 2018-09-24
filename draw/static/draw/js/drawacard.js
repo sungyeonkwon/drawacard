@@ -23,15 +23,15 @@ $(document).ready(function() {
   $(".show-english").click(function() {
     $("#card").flip('toggle');
 
-    if ($(".show--korean").hasClass('show')){
-      $(".show--korean").removeClass('show');
+    if ($(".show--otherlang").hasClass('show')){
+      $(".show--otherlang").removeClass('show');
       $(".show--english").removeClass('hide');
-      $(".show--korean").addClass('hide');
+      $(".show--otherlang").addClass('hide');
       $(".show--english").addClass('show');
     } else {
-      $(".show--korean").removeClass('hide');
+      $(".show--otherlang").removeClass('hide');
       $(".show--english").removeClass('show');
-      $(".show--korean").addClass('show');
+      $(".show--otherlang").addClass('show');
       $(".show--english").addClass('hide');
     }
   });

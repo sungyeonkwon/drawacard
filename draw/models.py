@@ -8,7 +8,7 @@ class Card(models.Model):
     LANG_CHOICES = [
         ('ko', 'Korean'),
         ('ja', 'Japanese'),
-        ('it', 'Italian'),
+        ('zhs', 'Chinese'),
     ]
 
     # card = models.ForeignKey(Card, on_delete=models.CASCADE)

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
 from django.http import HttpResponse, HttpResponseRedirect
@@ -19,13 +19,6 @@ def index(request):
 
 def card_new(request):
 
-    # def get_context_data(self, **kwargs):
-    #     # Call the base implementation first to get a context
-    #     context = super().get_context_data(**kwargs)
-    #     # Add in a QuerySet of all the books
-    #     context['book_list'] = Book.objects.all()
-    #     return context
-
     if request.method == "POST":
         form = CardForm(request.POST)
         if form.is_valid():
@@ -33,9 +26,69 @@ def card_new(request):
             card.author = request.user
             card.drawn_date = timezone.now()
             card.save()
-            # need to fix below
-            # return redirect('card_detail', pk=card.pk)
-            return render(request, 'draw/card_detail.html')
+
+
+            # save the input as chosen_variables
+            chosen_language = card.language
+
+            # if not card.keyword == null:
+            #     chosen_keyword = card.keyword
+
+            # implement the language variant
+            response_string = 'https://api.scryfall.com/cards/random?q=lang%3A'
+
+            if chosen_language == 'ko':
+                response_string += 'ko'
+                language = 'Korean'
+            elif chosen_language == 'ja':
+                response_string += 'ja'
+                language = 'Japanese'
+            else:
+                response_string += 'zhs'
+                language = 'Chinese'
+
+            response = requests.get(response_string)
+            # response = requests.get('https://api.scryfall.com/cards/random?q=lang%3Ako')
+            # response = requests.get('https://api.scryfall.com/cards/search?q=lang%3Akorean')
+            randomcard = response.json()
+
+            try:
+                printed_name = randomcard['printed_name']
+            except:
+                randomcard['printed_name'] = "(Name is empty.)"
+            try:
+                printed_text = randomcard['printed_text']
+            except:
+                randomcard['printed_text'] = "(Text is empty.)"
+            try:
+                oracle_text = randomcard['oracle_text']
+            except:
+                randomcard['oracle_text'] = "(Text is empty.)"
+            try:
+                printed_type_line = randomcard['printed_type_line']
+            except:
+                randomcard['printed_type_line'] = "(Type is empty.)"
+
+            name = randomcard['name']
+            printed_name = randomcard['printed_name']
+
+            type_line = randomcard['type_line']
+            printed_type_line = randomcard['printed_type_line']
+
+            oracle_text = randomcard['oracle_text']
+            printed_text = randomcard['printed_text']
+
+            context = {
+                'name': name,
+                'printed_name':printed_name,
+                'type_line':type_line,
+                'printed_type_line':printed_type_line,
+                'oracle_text':oracle_text,
+                'printed_text':printed_text,
+                'language':language
+                }
+
+            return render(request, 'draw/card_detail.html', context)
     else:
         form = CardForm()
     return render(request, 'draw/card_new.html', {'form': form})

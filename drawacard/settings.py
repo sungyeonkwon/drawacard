@@ -68,8 +68,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
 
-                'draw.context_processors.randomcard',
-                'draw.context_processors.sungtest',
+                # 'draw.context_processors.randomcard',
+                # 'draw.context_processors.sungtest',
             ],
         },
     },

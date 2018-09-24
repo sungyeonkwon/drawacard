@@ -9,7 +9,7 @@
   <div class="card--button show-english">
     <span class="text--white text--large font--beleren">
       <a href="#" class="show--english">Show in English</a>
-      <a href="#" class="show--korean hide">Show in Korean {{language}}</a>
+      <a href="#" class="show--otherlang hide">Show in {{language}}</a>
     </span>
   </div>
 
@@ -42,11 +42,11 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 
   <div class="card--button draw-again">
-    <span class="text--white text--large font--beleren"><a href="{% url 'draw:card_detail' %}">Draw Again</a></span>
+    <span class="text--white text--large font--beleren"><a href="{% url 'draw:card_new' %}">Draw Again</a></span>
   </div>
 </div>
 {% endblock %}
