@@ -1,13 +1,8 @@
-console.log("hello");
-
-var apple = "apple";
-
 
 $("#card").flip({
   axis: 'y',
   trigger: 'manual'
 });
-
 
 
 // finish this

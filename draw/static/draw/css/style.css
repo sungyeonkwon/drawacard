@@ -260,17 +260,36 @@ input, textarea, input:hover, input:focus, input:active{
 }
 
 .custom-form-select, .custom-form-field {
+  /* font-family: "mtgx"; */
   width: 235px;
+  height:28px;
   padding: 6px 5px;
   color:white;
   font-size: 14px;
   border:1px solid white;
-  background-color:black;
-  margin-bottom:10px;
+  background-color:rgba(0,0,0,0);
+  margin-bottom:15px;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  /* border:none !important; */
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0,0,0,0) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+/* select box custtomisation */
 
 .share-input{
   display:none;
