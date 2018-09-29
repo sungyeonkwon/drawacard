@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'draw.apps.DrawConfig',
+    'home.apps.HomeConfig',
 
     'widget_tweaks',
 

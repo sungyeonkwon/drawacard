@@ -20,9 +20,6 @@ class Card(models.Model):
 
     keyword = models.CharField(max_length=200,null=True,blank=True)
 
-    # card_name = models.CharField(max_length=200,null=True,blank=True)
-    # card_text = models.TextField(max_length=500,null=True,blank=True)
-
     drawn_date = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):

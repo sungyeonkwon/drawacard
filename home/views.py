@@ -14,7 +14,7 @@ def index(request):
     # return HttpResponse("Hello, world. You're at the draw index.")
     all_card = Card.objects.all()
     context = {'all_card': all_card}
-    return render(request, 'draw/index.html', context)
+    return render(request, 'home/index.html', context)
 
 
 def card_new(request):
@@ -103,10 +103,10 @@ def card_new(request):
                 'language':language
                 }
 
-            return render(request, 'draw/card_detail.html', context)
+            return render(request, 'home/card_detail.html', context)
     else:
         form = CardForm()
-    return render(request, 'draw/card_new.html', {'form': form})
+    return render(request, 'home/card_new.html', {'form': form})
 
 def card_detail(request):
-    return render(request, 'draw/card_detail.html')
+    return render(request, 'home/card_detail.html')
