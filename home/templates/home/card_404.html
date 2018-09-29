@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="flexbox">
-  <div class="card--button show-english">
+  <div class="card--button show-english" style="visibility:hidden;">
     <span class="text--white text--large font--beleren">
       <a href="#" class="show--english">Show in English</a>
       <a href="#" class="show--otherlang hide">Show in {{language}}</a>
@@ -17,24 +17,24 @@
 
     <div class="card--container view--text front">
       <div class="card--container__wrapper">
-        <p class="card--container__text text--black korean">
-          <span class="card-name"><b>{{ printed_name }}</b></span>
-          <span class="card-type">{{ printed_type_line }}</span>
-          {{ printed_text }}
+        <p class="card--container__text text--black font--mtgx english">
+          <span class="card-name"><b>Unfortunate End</b></span>
+          <!-- <span class="card-type">{{ printed_type_line }}</span> -->
+          There is no such card.
         </p>
-        <div class="share--card font--mtgx">
+        <!-- <div class="share--card font--mtgx">
           <span class="card-share">Share This Card</span>
           <input class="share-input" type='text' value="{{ request.build_absolute_uri }}{{ object.get_absolute_url }}"></input>
-        </div>
+        </div> -->
       </div>
     </div>
 
     <div class="card--container view--text back">
       <div class="card--container__wrapper">
         <p class="card--container__text text--black font--mtgx english">
-          <span class="card-name"><b>{{ name }}</b></span>
-          <span class="card-type">{{ type_line }}</span>
-          {{ oracle_text }}
+          <span class="card-name"><b>Unfortunate End</b></span>
+          <!-- <span class="card-type">{{ type_line }}</span> -->
+          There is no such card.
         </p>
         <div class="share--card font--mtgx">
           <span class="card-share">Share This Card</span>
@@ -45,14 +45,9 @@
 
   </div>
 
-
   <div class="card--button draw-again">
-    <a href="{% url 'home:card_new' %}">
-    <span class="text--white text--large font--beleren">Draw Another Card</span>
-    </a>
+    <span class="text--white text--large font--beleren"><a href="{% url 'home:card_new' %}">Draw Again</a></span>
   </div>
-
-
 </div>
 {% endblock %}
 

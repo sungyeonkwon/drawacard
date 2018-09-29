@@ -28,7 +28,7 @@ def card_new(request):
 
             # card.card_name = "placeholder name"
             # card.card_text = "placeholder text"
-            #
+
             card.save()
 
 
@@ -54,10 +54,13 @@ def card_new(request):
                 response = requests.get(response_string)
                 randomcard = response.json()
 
+                if randomcard["object"] == 'error':
+                    return render(request, 'home/card_404.html')
+
                 total_cards = int(randomcard["total_cards"])
                 random_card_index = random.randint(0,total_cards-1)
-
                 result = randomcard["data"][random_card_index]
+
 
             else:
                 response_string = 'https://api.scryfall.com/cards/random?q=lang%3A'
@@ -70,19 +73,19 @@ def card_new(request):
             try:
                 printed_name = result['printed_name']
             except:
-                result['printed_name'] = "(Name is empty.)"
+                result['printed_name'] = ""
             try:
                 printed_text = result['printed_text']
             except:
-                result['printed_text'] = "(Text is empty.)"
+                result['printed_text'] = ""
             try:
                 oracle_text = result['oracle_text']
             except:
-                result['oracle_text'] = "(Text is empty.)"
+                result['oracle_text'] = ""
             try:
                 printed_type_line = result['printed_type_line']
             except:
-                result['printed_type_line'] = "(Type is empty.)"
+                result['printed_type_line'] = ""
 
             name = result['name']
             printed_name = result['printed_name']
@@ -109,4 +112,7 @@ def card_new(request):
     return render(request, 'home/card_new.html', {'form': form})
 
 def card_detail(request):
+    # if request.method == "POST":
+    #     pass
+    # should I put something here? so that it processes something?
     return render(request, 'home/card_detail.html')
