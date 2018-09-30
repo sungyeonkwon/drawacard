@@ -26,7 +26,10 @@ class Card(models.Model):
     card_text = models.TextField(null=True,blank=True)
 
     def __str__(self):
-        return self.language
+        if self.card_name:
+            return self.card_name + " / " +self.language
+        else:
+            return self.language
         # if self.language:
         #     return "Language: " + self.language + " / Keyword: "+ self.keyword
         # return "Language: " + self.language
