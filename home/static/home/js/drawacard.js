@@ -1,3 +1,10 @@
+// $('.backgroundTransition').backgroundTransition({
+//   backgrounds:[
+//     { src: 'img/bg_01.jpg' },
+//     { src: 'img/bg_01.jpg' },
+//   ]
+// });
+
 
 $("#card").flip({
   axis: 'y',

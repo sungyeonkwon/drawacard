@@ -26,11 +26,7 @@ def card_new(request):
             card.author = request.user
             card.drawn_date = timezone.now()
 
-            # card.card_name = "placeholder name"
-            # card.card_text = "placeholder text"
-
-            card.save()
-
+            # card.save()
 
             # save the input as chosen_variables
             chosen_language = card.language
@@ -87,6 +83,11 @@ def card_new(request):
             except:
                 result['printed_type_line'] = ""
 
+            card.card_name = result['name']
+            card.card_text = result['oracle_text']
+
+            card.save()
+
             name = result['name']
             printed_name = result['printed_name']
 
@@ -111,8 +112,31 @@ def card_new(request):
         form = CardForm()
     return render(request, 'home/card_new.html', {'form': form})
 
-def card_detail(request):
-    # if request.method == "POST":
+def card_detail(request, card_id):
+
+    # card_drawn = get_object_or_404(Card, pk=card_id)
+    # try:
+    #     card_drawn = Card.objects.filter(pk=request.POST['this needs to be input name'])
+        # card.choice_set.get(pk=request.POST['choice'])
     #     pass
     # should I put something here? so that it processes something?
-    return render(request, 'home/card_detail.html')
+    return render(request, 'home/card_detail.html', {'card_drawn': card_drawn})
+
+# def vote(request, question_id):
+#     # return HttpResponse("You're voting on question %s." % question_id)
+#     question = get_object_or_404(Question, pk=question_id)
+#     try:
+#         selected_choice = question.choice_set.get(pk=request.POST['choice'])
+#     except (KeyError, Choice.DoesNotExist):
+#         # Redisplay the question voting form.
+#         return render(request, 'polls/detail.html', {
+#             'question': question,
+#             'error_message': "You didn't select a choice.",
+#         })
+#     else:
+#         selected_choice.votes += 1
+#         selected_choice.save()
+#         # Always return an HttpResponseRedirect after successfully dealing
+#         # with POST data. This prevents data from being posted twice if a
+#         # user hits the Back button.
+#         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))

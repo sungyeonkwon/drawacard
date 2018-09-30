@@ -20,16 +20,11 @@ class Card(models.Model):
 
     keyword = models.CharField(max_length=200,null=True,blank=True)
 
-    # card_name = models.CharField(max_length=200,null=True,blank=True)
-    # card_text = models.TextField(max_length=500,null=True,blank=True)
-
     drawn_date = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
         # return self.language
-        if self.card_name:
-            return "Name: " + self.card_name + " / Language: " + self.language + " / Keyword: "+ self.keyword
-        return "Language: " + self.language
+        return self.language
 
     def drawn(self):
         self.drawn_date = timezone.now()

@@ -22,10 +22,6 @@
           <!-- <span class="card-type">{{ printed_type_line }}</span> -->
           There is no such card.
         </p>
-        <!-- <div class="share--card font--mtgx">
-          <span class="card-share">Share This Card</span>
-          <input class="share-input" type='text' value="{{ request.build_absolute_uri }}{{ object.get_absolute_url }}"></input>
-        </div> -->
       </div>
     </div>
 
@@ -46,7 +42,7 @@
   </div>
 
   <div class="card--button draw-again">
-    <span class="text--white text--large font--beleren"><a href="{% url 'home:card_new' %}">Draw Again</a></span>
+    <span class="text--white text--large font--beleren"><a href="{% url 'home:card_new' %}">Draw Another Card</a></span>
   </div>
 </div>
 {% endblock %}

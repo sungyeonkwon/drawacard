@@ -26,9 +26,7 @@ def card_new(request):
             card.author = request.user
             card.drawn_date = timezone.now()
 
-            # card.card_name = "placeholder name"
-            # card.card_text = "placeholder text"
-            #
+
             card.save()
 
 

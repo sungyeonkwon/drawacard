@@ -17,8 +17,7 @@
 
         <form method="POST" class="card-form">
           {% csrf_token %}
-            <!-- {{ form.card_name | add_class:'custom-form-field' }}<br>
-            {{ form.card_text | add_class:'custom-form-field' }}<br> -->
+
             <span class="help-text text--white">Choose Language</span>
             {{ form.language | add_class:'custom-form-select' }}<br>
             <span class="help-text text--white">Optional keyword<br/>

@@ -17,13 +17,11 @@
 
         <form method="POST" class="card-form">
           {% csrf_token %}
-            <!-- {{ form.card_name | add_class:'custom-form-field' }}<br>
-            {{ form.card_text | add_class:'custom-form-field' }}<br> -->
-            <span class="help-text text--white">Choose Language</span>
+            <span class="help-text font--mtgx text--white">Language</span>
             {{ form.language | add_class:'custom-form-select' }}<br>
-            <span class="help-text text--white">Optional keyword<br/>
-            Keyword either in English or chosen language</span>
-            {{ form.keyword | add_class:'custom-form-field' | attr:"placeholder:(Optional, English or chosen language) "}}<br>
+            <span class="help-text font--mtgx text--white">Keyword<br/>
+            <span class="help-text-small">(Optional, in English or chosen language)</span></span>
+            {{ form.keyword | add_class:'custom-form-field' | attr:"placeholder:"}}<br>
             <button type="submit" class="save btn btn-default text--white text--large font--beleren">Show Text</button>
         </form>
 
