@@ -1,31 +1,57 @@
-
-// var backgrounds = [
+console.log('connected');
 //
-//   'https://img00.deviantart.net/6d10/i/2015/115/b/2/delver_of_squeakrets_by_alradeck-d8r1lz7.jpg',
-//   'https://img00.deviantart.net/8e77/i/2015/143/9/e/tasipurr_the_golden_paw_by_alradeck-d8ufbfx.jpg',
-//   'https://img00.deviantart.net/bce0/i/2015/205/5/b/deathrite_salmon_by_alradeck-d92mqeo.jpg'
-//   ];
+// var bg = [
+//   '/static/home/img/bg_00.jpg',
+//   '/static/home/img/bg_01.jpg',
+//   '/static/home/img/bg_02.jpg',
+//   '/static/home/img/bg_03.jpg',
+//   '/static/home/img/bg_04.jpg',
+//   '/static/home/img/bg_05.jpg',
+//   '/static/home/img/bg_06.jpg',
+//   '/static/home/img/bg_07.jpg',
+//   '/static/home/img/bg_08.jpg',
+//   '/static/home/img/bg_09.jpg',
+// ]
+// // var i = bg.indexOf(currentBg);
+// var currentBg = $('.background');
+//
+// $('.draw-again').click(function() {
+//   // e.preventDefault();
+//   console.log('draw again clicked');
+//   var current = $('.background.active');
+//   var next = $('.background.active + img');
+//   current.removeClass('active')
+//   current.addClass('inactive')
+//   next.removeClass('inactive')
+//   next.addClass('active')
+//   // var i = bg.indexOf($currentBg);
+//   // var index = (i + bg.length + 1) % bg.length;
+//   // $currentBg.attr("src", bg[3]);
+//
+// });
 
 
-
+// var backgrounds = ['bg_desert.jpg', 'bg_grass.jpg', 'bg_stone.jpg'];
+// // '{% static "pspace/img/bg_desert.jpg" %}';
+//
 // function changeBg(direction){
-//     var bg_img = document.querySelector("#bg"); //Select the img element by ID
+//     var bg_img = document.querySelector("#bg_desert"); //Select the img element by ID
+//     var bgNameRegex = /\/([^\/]+)$/;
+//     var matches = bg_img.src.match(bgNameRegex);
+//     var currentBg = matches[1];
 //     var i = backgrounds.indexOf(currentBg);
 //
+//     // bg text
+//     var bg_text = document.getElementById('game_bg_type'); //select text bg
 //     if (direction == "left") {
 //         i--;
-//         console.log(i);
 //     } else {
 //         i++;
 //     }
-//
 //     var index = (i + backgrounds.length) % backgrounds.length;
-//
 //     var chosenBg = backgrounds[index];
-//     console.log(index);
 //     bg_img.src = bg_img.src.replace(currentBg, chosenBg);
 // };
-
 
 
 $("#card").flip({
@@ -36,6 +62,44 @@ $("#card").flip({
 
 // finish this
 $(document).ready(function() {
+
+  $(function() {
+    $('.backgroundTransition').backgroundTransition({
+        backgrounds:[
+          { src: '/static/home/img/bg_00.jpg' },
+          { src: '/static/home/img/bg_01.jpg' },
+          { src: '/static/home/img/bg_02.jpg' },
+          { src: '/static/home/img/bg_03.jpg' },
+          { src: '/static/home/img/bg_04.jpg' },
+          { src: '/static/home/img/bg_05.jpg' },
+          { src: '/static/home/img/bg_06.jpg' },
+          { src: '/static/home/img/bg_07.jpg' },
+          { src: '/static/home/img/bg_08.jpg' },
+          { src: '/static/home/img/bg_09.jpg' },
+        ],
+        transitionDelay: 5,
+        animationSpeed: 3000
+    });
+  });
+
+
+  // $('.backgroundTransition').backgroundTransition({
+  //
+  //   //  CSS Selectors
+  //   classNameBottomImage: "image-bottom",
+  //   classNameTopImage: "image-top",
+  //   idNameDownloadImage: "image-download",
+  //
+  //   // an array of image objects
+  //   backgrounds: [],
+  //
+  //   // the delay between image transition
+  //   transitionDelay: 10,
+  //
+  //   // animation speed
+  //   animationSpeed: 500
+  //
+  // });
 
   // show share link
   $(".card-share").click(function() {

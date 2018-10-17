@@ -1,3 +1,6 @@
+.backgroundTransition {
+  /* background-image: url('/static/home/img/bg_04.jpg'); */
+}
 
 html, body, .backgroundTransition, .backgroundTransition .image-top, .backgroundTransition .image-bottom {
   height: 100%;
@@ -28,8 +31,13 @@ body .backgroundTransition .image-top {
 
 #image-download { display: none; }
 
-
-
+/* background */
+.inactive{
+  opacity:0;
+}
+.active{
+  opacity:1;
+}
 
 /* general layout */
 main, body, html {

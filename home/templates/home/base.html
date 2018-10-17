@@ -11,28 +11,43 @@
 
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'home/css/backgroundTransition.min.css' %}" />
 
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
-        <main class="container">
+      <!-- <div class="backgroundTransition"> -->
+        <main class="container backgroundTransition">
 
-
-          <img class="background" src="https://img00.deviantart.net/6d10/i/2015/115/b/2/delver_of_squeakrets_by_alradeck-d8r1lz7.jpg" id="bg" alt="background"/>
+          <!-- <img class="background active" src="{% static "home/img/bg_00.jpg" %}" id="bg0" alt="background"/>
+          <img class="background inactive" src="{% static "home/img/bg_01.jpg" %}" id="bg1" alt="background"/>
+          <img class="background inactive" src="{% static "home/img/bg_02.jpg" %}" id="bg2" alt="background"/>
+          <img class="background inactive" src="{% static "home/img/bg_03.jpg" %}" id="bg3" alt="background"/>
+          <img class="background inactive" src="{% static "home/img/bg_04.jpg" %}" id="bg4" alt="background"/>
+          <img class="background inactive" src="{% static "home/img/bg_05.jpg" %}" id="bg5" alt="background"/>
+          <img class="background inactive" src="{% static "home/img/bg_06.jpg" %}" id="bg6" alt="background"/>
+          <img class="background inactive" src="{% static "home/img/bg_07.jpg" %}" id="bg7" alt="background"/>
+          <img class="background inactive" src="{% static "home/img/bg_08.jpg" %}" id="bg8" alt="background"/>
+          <img class="background inactive" src="{% static "home/img/bg_09.jpg" %}" id="bg9" alt="background"/> -->
+          <!-- <img class="background" src="{% static "home/img/bg_00.jpg" %}" id="bg" alt="background"/> -->
           <!-- <img class="background" src="https://img00.deviantart.net/8e77/i/2015/143/9/e/tasipurr_the_golden_paw_by_alradeck-d8ufbfx.jpg" id="bg" alt="background"/>
           <img class="background" src="https://img00.deviantart.net/bce0/i/2015/205/5/b/deathrite_salmon_by_alradeck-d92mqeo.jpg" id="bg" alt="background"/> -->
-
           <!-- <img class="background" src="{% static "home/img/bg_01.jpg" %}" id="bg" alt="background"/> -->
 
         {% block content %}
-        {% endblock %}
 
+        {% endblock %}
+      </main>
+      <!-- </div> -->
     </body>
 
     {# Global javascript #}
-    <script type="text/javascript" src="{% static 'home/js/backgroundTransition.js' %}"></script>
+
+
+    <!-- <script type="text/javascript" src="backgroundTransition.js"></script> -->
     <script type="text/javascript" src="{% static 'home/js/jquery-3.2.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'home/js/jquery.flip.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'home/js/backgroundTransition.js' %}"></script>
     <script type="text/javascript" src="{% static 'home/js/drawacard.js' %}"></script>
 
 </html>

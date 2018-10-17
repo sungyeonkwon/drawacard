@@ -3,6 +3,8 @@
  * Author: Matt Richards, http://github.com/mattyrichards
  * Licensed under the MIT license
  */
+
+ console.log('hey');
 ;(function( $, window, document, undefined ){
 
     var BackgroundTransition = function( elem, options ){
@@ -48,7 +50,7 @@
                 this.config.imageKey = 0;
             }
             var deferred = $.Deferred();
-            $('<img/>').attr('id', this.config.idNameDownloadImage).load(function() {
+            $('<img/>').attr('id', this.config.idNameDownloadImage).on('load', function() {
                 deferred.resolve();
             }).attr('src', this.config.backgrounds[this.config.imageKey].src).prependTo('body .backgroundTransition');
             deferred.done(function() {
