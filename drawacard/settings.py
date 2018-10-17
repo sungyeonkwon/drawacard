@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'ereykp%a@79kpqumtg82c!l*93l#j^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'https://shrouded-refuge-37522.herokuapp.com/']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'shrouded-refuge-37522.herokuapp.com']
 
 
 # Application definition
