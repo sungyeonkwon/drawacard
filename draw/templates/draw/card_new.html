@@ -1,6 +1,6 @@
 {% extends "draw/base.html" %}
 
-{% load static widget_tweaks %}
+{% load static %}
 
 {% block body_class %}card-new{% endblock %}
 
@@ -19,10 +19,10 @@
           {% csrf_token %}
 
             <span class="help-text text--white">Choose Language</span>
-            {{ form.language | add_class:'custom-form-select' }}<br>
+            {{ form.language }}<br>
             <span class="help-text text--white">Optional keyword<br/>
             Keyword either in English or chosen language</span>
-            {{ form.keyword | add_class:'custom-form-field' | attr:"placeholder:(Optional, English or chosen language) "}}<br>
+            {{ form.keyword }}<br>
             <button type="submit" class="save btn btn-default text--white text--large font--beleren">Show Text</button>
         </form>
 
